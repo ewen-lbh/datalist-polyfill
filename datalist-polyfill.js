@@ -19,7 +19,8 @@
 		// Feature detection
 		datalistSupported =
 			'list' in dcmnt.createElement('input') &&
-			Boolean(dcmnt.createElement('datalist') && window.HTMLDataListElement),
+			Boolean(dcmnt.createElement('datalist') && window.HTMLDataListElement) &&
+	                !Boolean(/Android; Mobile; .+Firefox/.test(ua)), // see https://bugzilla.mozilla.org/show_bug.cgi?id=1535985
 		// IE & EDGE browser detection via UserAgent
 		// TODO: obviously ugly. But sadly necessary until Microsoft enhances the UX within EDGE (compare to https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/9573654/)
 		// Tested against the following UA strings: http://useragentstring.com/pages/useragentstring.php?name=Internet+Explorer
